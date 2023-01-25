@@ -1,11 +1,8 @@
 import { addTodo, changeTodo, removeAllTodos } from "../ts/functions";
-import { displayError } from "../ts/main";
-import { IAddResponse } from "../ts/models/IAddResult";
 import { Todo } from "../ts/models/Todo";
 
 
 //Se till även testa så funktionen som gör att du kan avmarkera todo-uppgiften funkar
-
 //Test for adding todo - "addTodo"
 /*test('Should add todo', () => {
 
@@ -38,9 +35,3 @@ test('Should remove all todos', () => {
 
     expect(todoList.length).toBe(0);
 });
-
-//Test for displaying error - "displayError"
-/*test('Should display error', () => {
-    
-
-});*/
