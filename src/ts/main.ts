@@ -78,7 +78,7 @@ export function displayError(error: string, show: boolean) {
 
 function clearTodos(todos: Todo[]) {
   removeAllTodos(todos);
-  createHtml(todos);
+  createHtml(todos); //Spionera på denna så den inte anropas
 }
 
 //createHtml(todos);

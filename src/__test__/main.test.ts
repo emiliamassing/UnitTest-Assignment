@@ -9,25 +9,38 @@ beforeEach(() => {
 });
 
 
-describe('Should add/remove css class depending on argument value - displayError()', () => {
+describe('Toggle css class depending on argument value - displayError()', () => {
 
-    //Test for reading innerHTML - "displayError"
-    test('Should display innerHTML', () => {
+    //if-statement is true - "displayError"
+    test('Should add class show', () => {
+
+        //Arrange 
         document.body.innerHTML = `
             <div id="error" class="error"></div>
         `;
-        let errorText = 'error msg';
+        let errorText = 'error message';
        
-        
+        //Act
         displayError(errorText, true);
 
-        let errorDiv = (document.getElementById('error') as HTMLDivElement);
+        //Assert
+        let errorDiv:HTMLDivElement = (document.getElementById('error') as HTMLDivElement);
         expect(errorDiv).not.toBeNull();
-        expect(errorDiv.innerHTML).toBe(errorText);
+        expect(errorDiv.classList.contains('show')).toBe(true);
     });
 
-    //Test for if if-statement is true - "displayError"
-    /*test('Should add error class', () => {
+    //if-statement is false - "displayError"
+    test('Should remove class show', () => {
 
-    });*/
+        document.body.innerHTML = `
+            <div id="error" class="error"></div>
+        `;
+        let errorText = 'error message';
+
+        displayError(errorText, false);
+
+        let errorDiv:HTMLDivElement = (document.getElementById('error') as HTMLDivElement);
+        expect(errorDiv).not.toBeNull();
+        expect(errorDiv.classList.contains('show')).toBe(false);
+    });
 });
