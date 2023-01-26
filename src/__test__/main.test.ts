@@ -2,7 +2,9 @@
 * @jest-environment jsdom
 */
 
-import { displayError } from "../ts/main";
+//import { displayError } from "../ts/main";
+import * as main from "../ts/main";
+import * as functions from "../ts/functions"
 
 beforeEach(() => {
     document.body.innerHTML = '';
@@ -21,7 +23,7 @@ describe('Toggle css class depending on argument value - displayError()', () => 
         let errorText = 'error message';
        
         //Act
-        displayError(errorText, true);
+        main.displayError(errorText, true);
 
         //Assert
         let errorDiv:HTMLDivElement = (document.getElementById('error') as HTMLDivElement);
@@ -37,10 +39,32 @@ describe('Toggle css class depending on argument value - displayError()', () => 
         `;
         let errorText = 'error message';
 
-        displayError(errorText, false);
+        main.displayError(errorText, false);
 
         let errorDiv:HTMLDivElement = (document.getElementById('error') as HTMLDivElement);
         expect(errorDiv).not.toBeNull();
         expect(errorDiv.classList.contains('show')).toBe(false);
+    });
+});
+
+
+describe('Check if functions gets called on - clearTodos', () => {
+    //Spying on functions to see if they gets called on
+    /*test('Should call on createHTML', () => {
+        const htmlSpy = jest.spyOn(main, "createHtml").mockReturnValue();
+
+        expect(htmlSpy).toHaveBeenCalledTimes(1);
+    });*/
+
+    test('Should call on removeAllTodos()', () => {
+        document.body.innerHTML = `
+            <ul id="todos" class="todo"></ul>
+        `;
+
+        const todoSpy = jest.spyOn(functions, "removeAllTodos").mockReturnValue();
+
+        main.clearTodos([]);
+
+        expect(todoSpy).toBeCalledTimes(1);
     });
 });
