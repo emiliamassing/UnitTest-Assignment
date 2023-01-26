@@ -5,11 +5,53 @@
 //import { displayError } from "../ts/main";
 import * as main from "../ts/main";
 import * as functions from "../ts/functions"
+import { Todo } from "../ts/models/Todo";
 
 beforeEach(() => {
     document.body.innerHTML = '';
 });
 
+describe('Check if functions gets called on - toggletoDo', () => {
+
+    test('Should call on changeTodo', () => {
+        //Arrange
+        document.body.innerHTML = `
+            <ul id="todos" class="todo"></ul>
+        `;
+        
+        let todoList: Todo[] = [
+            {text: 'testing', done: true}
+        ];
+
+        const changeTodoSpy = jest.spyOn(functions, "changeTodo").mockReturnValue();
+
+        //Act
+        main.toggleTodo(todoList[0]);
+
+        //Assert
+        expect(changeTodoSpy).toBeCalledTimes(1);
+    });
+
+    test('Should call on createHtml()', () => {
+        //Arrange
+        document.body.innerHTML = `
+            <ul id="todos" class="todo"></ul>
+        `;
+
+        let todoList: Todo[] = [
+            {text: 'testing', done: true}
+        ];
+
+        const htmlSpy = jest.spyOn(main, "createHtml").mockReturnValue();
+
+        //Act
+        main.toggleTodo(todoList[0]);
+
+        //Assert
+        expect(htmlSpy).toBeCalledTimes(1);
+        htmlSpy.mockRestore;
+    });
+});
 
 describe('Toggle css class depending on argument value - displayError()', () => {
 
@@ -61,10 +103,11 @@ describe('Check if functions gets called on - clearTodos', () => {
         main.createHtml([]);
 
         //Assert
-        expect(htmlSpy).toHaveBeenCalledTimes(1);
+        expect(htmlSpy).toHaveBeenCalledTimes(2); //Nollställ antal anrop av funktionen
+        htmlSpy.mockRestore;
     });
 
-    test('Should call on removeAllTodos()', () => {
+    test('Should call on clearTodos()', () => {
         //Arrange
         document.body.innerHTML = `
             <ul id="todos" class="todo"></ul>
@@ -75,6 +118,6 @@ describe('Check if functions gets called on - clearTodos', () => {
         main.clearTodos([]);
 
         //Assert
-        expect(todoSpy).toBeCalledTimes(1);
+        expect(todoSpy).toBeCalledTimes(1); 
     });
 });
