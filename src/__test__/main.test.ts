@@ -50,21 +50,31 @@ describe('Toggle css class depending on argument value - displayError()', () => 
 
 describe('Check if functions gets called on - clearTodos', () => {
     //Spying on functions to see if they gets called on
-    /*test('Should call on createHTML', () => {
-        const htmlSpy = jest.spyOn(main, "createHtml").mockReturnValue();
-
-        expect(htmlSpy).toHaveBeenCalledTimes(1);
-    });*/
-
-    test('Should call on removeAllTodos()', () => {
+    test('Should call on createHTML', () => {
+        //Arange
         document.body.innerHTML = `
             <ul id="todos" class="todo"></ul>
         `;
+        const htmlSpy = jest.spyOn(main, "createHtml").mockReturnValue();
 
+        //Act
+        main.createHtml([]);
+
+        //Assert
+        expect(htmlSpy).toHaveBeenCalledTimes(1);
+    });
+
+    test('Should call on removeAllTodos()', () => {
+        //Arrange
+        document.body.innerHTML = `
+            <ul id="todos" class="todo"></ul>
+        `;
         const todoSpy = jest.spyOn(functions, "removeAllTodos").mockReturnValue();
 
+        //Act
         main.clearTodos([]);
 
+        //Assert
         expect(todoSpy).toBeCalledTimes(1);
     });
 });
