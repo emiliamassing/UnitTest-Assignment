@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1674813511438" clover="3.2.0">
-  <project timestamp="1674813511439" name="All files">
-    <metrics statements="51" coveredstatements="33" conditionals="9" coveredconditionals="5" methods="12" coveredmethods="8" elements="72" coveredelements="46" complexity="0" loc="51" ncloc="51" packages="2" files="3" classes="3"/>
+<coverage generated="1674814439296" clover="3.2.0">
+  <project timestamp="1674814439301" name="All files">
+    <metrics statements="51" coveredstatements="34" conditionals="9" coveredconditionals="6" methods="12" coveredmethods="8" elements="72" coveredelements="48" complexity="0" loc="51" ncloc="51" packages="2" files="3" classes="3"/>
     <package name="ts">
-      <metrics statements="49" coveredstatements="31" conditionals="9" coveredconditionals="5" methods="11" coveredmethods="7"/>
+      <metrics statements="49" coveredstatements="32" conditionals="9" coveredconditionals="6" methods="11" coveredmethods="7"/>
       <file name="functions.ts" path="C:\webb\test-assignment-unittest\src\ts\functions.ts">
-        <metrics statements="11" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="5" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="18" count="2" type="stmt"/>

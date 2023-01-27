@@ -7,15 +7,12 @@ import { Todo } from "../ts/models/Todo";
 describe('Tests for addTodo()', () => {
     //Test for adding todo - "addTodo()"
     test('Should add new todo, if', () => {
-        //Arrange
         let todo: Todo[] = [];
         const testText = 'Dressage with Merlin';
         const length = todo.length; 
         
-        //Act
         functions.addTodo(testText, todo);
 
-        //Assert
         expect(todo.length).toBe(length+1);
         expect(todo[todo.length-1].text).toBe('Dressage with Merlin');
     });
@@ -24,7 +21,11 @@ describe('Tests for addTodo()', () => {
     test('Should not add new todo, else', () => {
         let todo: Todo[] = [];
         const testText = '';
-        const length = todo.length; 
+        const length = todo.length;
+        
+        functions.addTodo(testText, todo);
+
+        expect(todo.length).toBe(length);
     });
 });
 
