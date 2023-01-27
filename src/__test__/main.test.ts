@@ -38,6 +38,28 @@ describe('Tests for createNewTodo()', () => {
 
 });
 
+describe('Tests for createHtml', () => {
+
+    test('Should add Li element', () => {
+        document.body.innerHTML = `
+            <ul id="todos" class="todo"></ul>
+        `;
+
+        let todoList: Todo[] = [
+            {text: 'Finish assignment', done: false}
+        ];
+
+        let newLiElement = `<li class="todo__text">Finish assignment</li>`;
+
+        main.createHtml(todoList);
+
+        let htmlResult = document.querySelector('.todo')?.innerHTML;
+
+        expect(htmlResult).toEqual(newLiElement);
+    });
+
+});
+
 describe('Check if functions gets called on - toggletoDo()', () => {
 
     test('Should call on changeTodo', () => {
