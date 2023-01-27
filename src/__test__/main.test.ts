@@ -48,7 +48,7 @@ describe('Check if functions gets called on - toggletoDo', () => {
 
         //Assert
         expect(htmlSpy).toBeCalledTimes(1);
-        htmlSpy.mockRestore;
+        htmlSpy.mockRestore();
     });
 });
 
@@ -102,8 +102,8 @@ describe('Check if functions gets called on - clearTodos', () => {
         main.createHtml([]);
 
         //Assert
-        expect(htmlSpy).toHaveBeenCalledTimes(2); //Nollställ antal anrop av funktionen?
-        htmlSpy.mockRestore;
+        expect(htmlSpy).toHaveBeenCalledTimes(1);
+        htmlSpy.mockRestore();
     });
 
     test('Should call on clearTodos()', () => {
