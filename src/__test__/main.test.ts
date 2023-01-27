@@ -15,7 +15,7 @@ describe('Tests for createNewTodo()', () => {
 
     //Spying on functions to see if they've been called on
     test('Should call on createHtml', () => {
-        const todoText = "Go snowboarding";
+        const todoText = 'Go snowboarding';
         let todos: Todo[] = [];
         let htmlSpy = jest.spyOn(main, 'createHtml').mockReturnValue();
 
@@ -25,6 +25,16 @@ describe('Tests for createNewTodo()', () => {
         htmlSpy.mockRestore();
     });
 
+    test('Should call on displayError', () => {
+        const todoText = '';
+        let todos: Todo[] = [];
+        let errorSpy = jest.spyOn(main, 'displayError').mockReturnValue();
+
+        main.createNewTodo(todoText, todos);
+
+        expect(errorSpy).toHaveBeenCalledTimes(1);
+        errorSpy.mockRestore();
+    });
 
 });
 
