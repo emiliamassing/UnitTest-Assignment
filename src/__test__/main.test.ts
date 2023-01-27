@@ -2,7 +2,6 @@
 * @jest-environment jsdom
 */
 
-//import { displayError } from "../ts/main";
 import * as main from "../ts/main";
 import * as functions from "../ts/functions"
 import { Todo } from "../ts/models/Todo";
@@ -103,7 +102,7 @@ describe('Check if functions gets called on - clearTodos', () => {
         main.createHtml([]);
 
         //Assert
-        expect(htmlSpy).toHaveBeenCalledTimes(2); //Nollställ antal anrop av funktionen
+        expect(htmlSpy).toHaveBeenCalledTimes(2); //Nollställ antal anrop av funktionen?
         htmlSpy.mockRestore;
     });
 
