@@ -4,13 +4,32 @@
 
 import * as main from "../ts/main";
 import * as functions from "../ts/functions"
+import { IAddResponse } from "../ts/models/IAddResult";
 import { Todo } from "../ts/models/Todo";
 
 beforeEach(() => {
     document.body.innerHTML = '';
 });
 
-describe('Check if functions gets called on - toggletoDo', () => {
+describe('Tests for createNewTodo()', () => {
+
+    //Test for create new todo - if
+    test('Should call on createHtml', () => {
+        const todoText = "Go snowboarding";
+        let todos: Todo[] = [];
+        let htmlSpy = jest.spyOn(main, 'createHtml').mockReturnValue();
+
+        main.createNewTodo(todoText, todos);
+
+        expect(htmlSpy).toHaveBeenCalledTimes(1);
+        htmlSpy.mockRestore();
+    });
+
+    //Test for create new todo - else 
+    
+});
+
+describe('Check if functions gets called on - toggletoDo()', () => {
 
     test('Should call on changeTodo', () => {
         //Arrange
