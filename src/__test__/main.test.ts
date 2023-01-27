@@ -58,6 +58,39 @@ describe('Tests for createHtml', () => {
         expect(htmlResult).toEqual(newLiElement);
     });
 
+    test('Should add --done to li if todo is done', () => {
+        document.body.innerHTML = `
+            <ul id="todos" class="todo"></ul>
+        `;
+
+        let todoList: Todo[] = [
+            {text: 'Finish assignment', done: true}
+        ];
+
+        main.createHtml(todoList);
+
+        let htmlResult = document.querySelector('.todo')?.innerHTML;
+        let htmlClass = document.querySelector('.todo')?.firstElementChild;
+        let li = 'todo__text--done';
+
+        expect(htmlResult).toContain(li);
+        expect(htmlClass?.classList.contains(li)).toBeTruthy;
+    });
+
+    test('should call on toggleTodo if Li is clicked', () => {
+        document.body.innerHTML = `
+        <ul id="todos" class="todo"> 
+            <li class="todo__text"></li> 
+        </ul>
+        `;
+
+        let toggleTodoSpy = jest.spyOn(main, 'toggleTodo');
+        main.createHtml([new Todo('Go snowboarding', true)]);
+
+
+        document.querySelector('li')?.click();
+        expect(toggleTodoSpy).toHaveBeenCalledTimes(1);
+    });
 });
 
 describe('Check if functions gets called on - toggletoDo()', () => {
