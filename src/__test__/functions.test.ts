@@ -7,6 +7,7 @@ import * as main from "../ts/main";
 import { Todo } from "../ts/models/Todo";
 
 describe('Tests for addTodo()', () => {
+
     test('Should add new todo, if', () => {
         let todo: Todo[] = [];
         const testText = 'Dressage with Merlin';
@@ -29,8 +30,7 @@ describe('Tests for addTodo()', () => {
     });
 });
 
-//Test for completeing todo - "changeTodo"
-test('Should switch from false to true', () => {
+test('Should switch from false to true, changeTodo()', () => {
 
     const todo = new Todo('Brush Aramis', false);
 
@@ -39,8 +39,7 @@ test('Should switch from false to true', () => {
     expect(todo.done).toBe(true);
 });
 
-//Test for clearing all todos - "removeAllTodos"
-test('Should remove all todos', () => {
+test('Should remove all todos, removeAllTodos()', () => {
 
     let todoList: Todo[] = [
         {text: 'Dressage with Merlin', done: false}, // Shows that both done and undone todos gets removed
@@ -53,6 +52,7 @@ test('Should remove all todos', () => {
 });
 
 describe('Tests for sortTodoList()', () => {
+
     test('Should sort todos from a-ö', () =>{
         document.body.innerHTML = `
             <ul id="todos" class="todo"></ul>

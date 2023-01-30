@@ -21,7 +21,6 @@ export function removeAllTodos(todos: Todo[]) {
 }
 
 export function sortTodoList(todos: Todo[]){
-  //Alfabetic sorting
   todos.sort((a, b) => {
     const textA = a.text.toLowerCase();
     const textB = b.text.toLowerCase();
@@ -30,7 +29,7 @@ export function sortTodoList(todos: Todo[]){
       return -1;
     }
     if(textA > textB) {
-      return 0;
+      return 1;
     }
     return 0;
   });

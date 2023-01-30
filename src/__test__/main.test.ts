@@ -13,7 +13,6 @@ beforeEach(() => {
 
 describe('Tests for createNewTodo()', () => {
 
-    //Spying on functions to see if they've been called on
     test('Should call on createHtml', () => {
         const todoText = 'Go snowboarding';
         let todos: Todo[] = [];
@@ -131,7 +130,6 @@ describe('Check if functions gets called on - toggletoDo()', () => {
 
 describe('Toggle css class depending on argument value - displayError()', () => {
 
-    //if-statement is true - "displayError"
     test('Should add class show', () => {
 
         document.body.innerHTML = `
@@ -146,7 +144,6 @@ describe('Toggle css class depending on argument value - displayError()', () => 
         expect(errorDiv.classList.contains('show')).toBe(true);
     });
 
-    //if-statement is false - "displayError"
     test('Should remove class show', () => {
 
         document.body.innerHTML = `
@@ -164,7 +161,7 @@ describe('Toggle css class depending on argument value - displayError()', () => 
 
 
 describe('Check if functions gets called on - clearTodos', () => {
-    //Spying on functions to see if they gets called on
+    
     test('Should call on createHtml', () => {
         document.body.innerHTML = `
             <ul id="todos" class="todo"></ul>
