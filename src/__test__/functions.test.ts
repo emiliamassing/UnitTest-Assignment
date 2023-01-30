@@ -49,7 +49,5 @@ test('Should remove all todos', () => {
 });
 
 describe('Tests for sortTodoList()', () => {
-    test('Should convert to lowercase', () => {
-        
-    });
+
 });

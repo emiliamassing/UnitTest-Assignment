@@ -1,7 +1,6 @@
 import { createHtml } from "./main";
 import { IAddResponse } from "./models/IAddResult";
 import { Todo } from "./models/Todo";
-import * as main from "./main";
 
 export function addTodo(todoText: string, todos: Todo[]): IAddResponse {
   if (todoText.length > 2) {
@@ -35,6 +34,6 @@ export function sortByName(todos: Todo[]){
     }
     return 0;
 
-    main.createHtml(todos);
+    createHtml(todos);
   });
 }

@@ -1,7 +1,8 @@
-import { addTodo, changeTodo, removeAllTodos } from "./functions";
+import { addTodo, changeTodo, removeAllTodos, sortByName } from "./functions";
 import { Todo } from "./models/Todo";
 
 let todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
+const sortButton = document.querySelector('#sort') as HTMLButtonElement | null;
 
 document.getElementById("clearTodos")?.addEventListener("click", () => {
   clearTodos(todos);
@@ -80,6 +81,10 @@ export function clearTodos(todos: Todo[]) {
   removeAllTodos(todos);
   exports.createHtml(todos);
 }
+
+sortButton?.addEventListener('click', () => {
+  sortByName(todos);
+});
 
 //createHtml(todos);
 
