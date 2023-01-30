@@ -3,6 +3,7 @@
 */
 
 import * as functions from "../ts/functions";
+import * as main from "../ts/main";
 import { Todo } from "../ts/models/Todo";
 
 describe('Tests for addTodo()', () => {
@@ -52,5 +53,33 @@ test('Should remove all todos', () => {
 });
 
 describe('Tests for sortTodoList()', () => {
-    
+    test('Should sort todos from a-ö', () =>{
+        document.body.innerHTML = `
+            <ul id="todos" class="todo"></ul>
+        `;
+        
+        let todoList: Todo[] = [
+            {text: 'Merlin', done: false},
+            {text: 'Aramis', done: false},
+            {text: 'Dacke', done: false}
+        ];
+
+        functions.sortTodoList(todoList);
+
+        expect(todoList[0].text).toEqual('Aramis');
+        expect(todoList[1].text).toEqual('Dacke');
+        expect(todoList[2].text).toEqual('Merlin');
+    });
+
+    test('Should call on createHtml', () => {
+        document.body.innerHTML = `
+            <ul id="todos" class="todo"></ul>
+        `;
+        const htmlSpy = jest.spyOn(main, "createHtml").mockReturnValue();
+
+        main.createHtml([]);
+
+        expect(htmlSpy).toHaveBeenCalledTimes(1);
+        htmlSpy.mockRestore();
+    });
 });

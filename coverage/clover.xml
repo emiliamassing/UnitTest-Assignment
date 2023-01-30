@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675081476102" clover="3.2.0">
-  <project timestamp="1675081476102" name="All files">
-    <metrics statements="66" coveredstatements="51" conditionals="11" coveredconditionals="9" methods="15" coveredmethods="10" elements="92" coveredelements="70" complexity="0" loc="66" ncloc="66" packages="2" files="3" classes="3"/>
+<coverage generated="1675082486333" clover="3.2.0">
+  <project timestamp="1675082486333" name="All files">
+    <metrics statements="66" coveredstatements="59" conditionals="11" coveredconditionals="11" methods="15" coveredmethods="12" elements="92" coveredelements="82" complexity="0" loc="66" ncloc="66" packages="2" files="3" classes="3"/>
     <package name="ts">
-      <metrics statements="64" coveredstatements="49" conditionals="11" coveredconditionals="9" methods="14" coveredmethods="9"/>
+      <metrics statements="64" coveredstatements="57" conditionals="11" coveredconditionals="11" methods="14" coveredmethods="11"/>
       <file name="functions.ts" path="C:\webb\test-assignment-unittest\src\ts\functions.ts">
-        <metrics statements="22" coveredstatements="13" conditionals="4" coveredconditionals="2" methods="5" coveredmethods="3"/>
+        <metrics statements="22" coveredstatements="21" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
@@ -19,15 +19,15 @@
         <line num="19" count="2" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="29" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="32" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="33" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="29" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="32" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="2" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
       </file>
       <file name="main.ts" path="C:\webb\test-assignment-unittest\src\ts\main.ts">
         <metrics statements="42" coveredstatements="36" conditionals="7" coveredconditionals="7" methods="9" coveredmethods="6"/>
@@ -49,18 +49,18 @@
         <line num="33" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="39" count="2" type="stmt"/>
-        <line num="40" count="6" type="stmt"/>
-        <line num="42" count="6" type="stmt"/>
-        <line num="46" count="6" type="stmt"/>
-        <line num="48" count="6" type="stmt"/>
-        <line num="49" count="3" type="stmt"/>
-        <line num="51" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="7" type="stmt"/>
+        <line num="42" count="7" type="stmt"/>
+        <line num="46" count="7" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+        <line num="49" count="6" type="stmt"/>
+        <line num="51" count="6" type="cond" truecount="1" falsecount="0"/>
         <line num="52" count="2" type="stmt"/>
-        <line num="55" count="3" type="stmt"/>
-        <line num="56" count="3" type="stmt"/>
-        <line num="57" count="3" type="stmt"/>
+        <line num="55" count="6" type="stmt"/>
+        <line num="56" count="6" type="stmt"/>
+        <line num="57" count="6" type="stmt"/>
         <line num="58" count="1" type="stmt"/>
-        <line num="61" count="3" type="stmt"/>
+        <line num="61" count="6" type="stmt"/>
         <line num="65" count="2" type="stmt"/>
         <line num="66" count="3" type="stmt"/>
         <line num="67" count="3" type="stmt"/>

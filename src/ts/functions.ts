@@ -20,7 +20,7 @@ export function removeAllTodos(todos: Todo[]) {
   todos.splice(0, todos.length);
 }
 
-export function sortByName(todos: Todo[]){
+export function sortTodoList(todos: Todo[]){
   //Alfabetic sorting
   todos.sort((a, b) => {
     const textA = a.text.toLowerCase();
