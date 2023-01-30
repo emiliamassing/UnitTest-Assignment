@@ -2,10 +2,7 @@ import * as functions from "../ts/functions";
 
 import { Todo } from "../ts/models/Todo";
 
-//Se till även testa så funktionen som gör att du kan avmarkera todo-uppgiften funkar
-
 describe('Tests for addTodo()', () => {
-    //Test for adding todo - "addTodo()"
     test('Should add new todo, if', () => {
         let todo: Todo[] = [];
         const testText = 'Dressage with Merlin';
@@ -17,7 +14,6 @@ describe('Tests for addTodo()', () => {
         expect(todo[todo.length-1].text).toBe('Dressage with Merlin');
     });
 
-    //Test for trying to add too short text - "addTodo()"
     test('Should not add new todo, else', () => {
         let todo: Todo[] = [];
         const testText = '';
@@ -50,4 +46,10 @@ test('Should remove all todos', () => {
     functions.removeAllTodos(todoList);
 
     expect(todoList.length).toBe(0);
+});
+
+describe('Tests for sortTodoList()', () => {
+    test('Should convert to lowercase', () => {
+        
+    });
 });

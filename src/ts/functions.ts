@@ -1,5 +1,7 @@
+import { createHtml } from "./main";
 import { IAddResponse } from "./models/IAddResult";
 import { Todo } from "./models/Todo";
+import * as main from "./main";
 
 export function addTodo(todoText: string, todos: Todo[]): IAddResponse {
   if (todoText.length > 2) {
@@ -19,11 +21,11 @@ export function removeAllTodos(todos: Todo[]) {
   todos.splice(0, todos.length);
 }
 
-function sortTodoList(todos: Todo[]){
+export function sortByName(todos: Todo[]){
   //Alfabetic sorting
   todos.sort((a, b) => {
-    const textA = a.text.toLocaleLowerCase();
-    const textB = b.text.toLocaleLowerCase();
+    const textA = a.text.toLowerCase();
+    const textB = b.text.toLowerCase();
 
     if(textA < textB) {
       return -1;
@@ -32,5 +34,7 @@ function sortTodoList(todos: Todo[]){
       return 0;
     }
     return 0;
+
+    main.createHtml(todos);
   });
 }
