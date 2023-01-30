@@ -33,7 +33,7 @@ export function sortByName(todos: Todo[]){
       return 0;
     }
     return 0;
-
-    createHtml(todos);
   });
+
+  createHtml(todos);
 }

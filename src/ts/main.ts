@@ -1,7 +1,7 @@
 import { addTodo, changeTodo, removeAllTodos, sortByName } from "./functions";
 import { Todo } from "./models/Todo";
 
-const sortButton = document.getElementById('sort');
+const sortButton = document.getElementById('sort') as HTMLButtonElement;
 let todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
 
 document.getElementById("clearTodos")?.addEventListener("click", () => {
@@ -21,6 +21,10 @@ document.getElementById("clearTodos")?.addEventListener("click", () => {
     createNewTodo(todoText, todos);
   }
 );
+
+sortButton?.addEventListener('click', () => {
+  sortByName(todos);
+});
 
 export function createNewTodo(todoText: string, todos: Todo[]) {
   let result = addTodo(todoText, todos);
@@ -81,10 +85,6 @@ export function clearTodos(todos: Todo[]) {
   removeAllTodos(todos);
   exports.createHtml(todos);
 }
-
-sortButton?.addEventListener('click', () => {
-  sortByName(todos);
-});
 
 //createHtml(todos);
 

@@ -1,5 +1,8 @@
-import * as functions from "../ts/functions";
+/*** 
+* @jest-environment jsdom
+*/
 
+import * as functions from "../ts/functions";
 import { Todo } from "../ts/models/Todo";
 
 describe('Tests for addTodo()', () => {
